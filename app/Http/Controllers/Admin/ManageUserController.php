@@ -11,9 +11,6 @@ use Auth;
 class ManageUserController extends Controller
 {
     public function UserView(){
-    	// $allData = User::all();
-    	// $data['allData'] = User::whereIn('role_id', [2, 3])->get();
-    	// return view('admin.user.view_user',$data);
         $data['allData'] = User::whereIn('role_id', [2, 3])
         ->join('roles', 'users.role_id', '=', 'roles.id')
         ->select('users.*', 'roles.name as role_name')
@@ -28,58 +25,6 @@ class ManageUserController extends Controller
 		
     	return view('admin.user.add_user');
     }
-
-
-    // public function UserStore(Request $request){
-
-    // 	$validatedData = $request->validate([
-    // 		'email' => 'required|unique:users',
-    // 		'name' => 'required|unique:users',
-    //         'role' => 'required|integer',
-	// 		'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Add the image validation rules
-    // 	]);
-	// 	// Check if the email already exists in the database
-	// 	$existingEmail = User::where('email', $request->email)->first();
-	// 	if ($existingEmail) {
-	// 		$errors = [
-	// 			'email' => 'The email already exists in the database.',
-	// 		];
-	// 		return redirect()->back()->withInput()->withErrors($errors);
-	// 	}
-	
-	// 	// Check if the username already exists in the database
-	// 	$existingUsername = User::where('name', $request->name)->first();
-	// 	if ($existingUsername) {
-	// 		$errors = [
-	// 			'name' => 'The username already exists in the database.',
-	// 		];
-	// 		return redirect()->back()->withInput()->withErrors($errors);
-	// 	}
-
-    // 	$data = new User();
-    //     // $code = rand(0000,9999);
-    // 	$data->name = $request->name;
-    // 	$data->email = $request->email;
-    // 	$data->password = bcrypt($request->password);
-    //     $data->role_id = $request->role;
-    //     // $data->code = $code;
-	// 	if ($request->file('image')) {
-    // 		$file = $request->file('image');
-    // 		// @unlink(public_path('upload/student_img/'.$data->image));
-    // 		$filename = date('Y-m-d_H-i-s').$file->getClientOriginalName();
-    // 		$file->move(public_path('upload/student_img'),$filename);
-    // 		$data['image'] = $filename;
-    // 	}
-    // 	$data->save();
-
-    // 	$notification = array(
-    // 		'message' => 'User Inserted Successfully',
-    // 		'alert-type' => 'success'
-    // 	);
-
-    // 	return redirect()->route('user.view')->with($notification);
-
-    // }
 
 	public function sendEmailVerificationNotifications()
 {
@@ -221,10 +166,8 @@ class ManageUserController extends Controller
 
     // Find the user by their ID
      $user = User::findOrFail($id);
-	// $user = User::find(Auth::id());
 
     // Update the user's password
-	// $user->password = bcrypt($validatedData['new_password']);
     $user->password = Hash::make($validatedData['new_password']);
     $user->save();
 
