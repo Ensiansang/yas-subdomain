@@ -21,8 +21,7 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-// Check if the timestamp query parameter is present in the URL
-        // $timestamp = $request->query('timestamp');
+
         // Set a session variable to indicate that the user is logged in
         Session::put('is_authenticated', true);
         // Attempt to authenticate the user
@@ -38,8 +37,6 @@ class LoginController extends Controller
             }
         }
 
-        // If authentication fails, redirect back with an error message
-        // return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credentials']);
          // If authentication fails, redirect back with specific error messages
     $errors = [];
     
@@ -50,14 +47,10 @@ class LoginController extends Controller
     } else {
         $errors['login'] = 'Incorrect Password. Please try again.';
     }
-    // Clear the old email value if both email and password are incorrect
-    // if (count($errors) == 2) {
-    //     $request->session()->forget('email');
-    // }
+   
 
     return redirect()->back()->withErrors($errors)->withInput($request->except('password'));
-    // return redirect()->back()->withInput()->withErrors($errors);
-    // return redirect()->back()->withErrors($errors)->withInput(['email' => $request->input('email')]);
+    
    
     }
 }
