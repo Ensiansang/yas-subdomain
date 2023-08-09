@@ -17,7 +17,7 @@
 		
 		<div>
 			<p class="text-mute mt-20 mb-0 font-size-16">Some features</p>
-			<!-- <h3 class="text-white mb-0 font-weight-500">3400 <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3> -->
+			
 		</div>
 	</div>
 </div>
@@ -30,7 +30,7 @@
 		</div>
 		<div>
 			<p class="text-mute mt-20 mb-0 font-size-16">Some features</p>
-			<!-- <h3 class="text-white mb-0 font-weight-500">3400 <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3> -->
+			
 		</div>
 	</div>
 </div>
@@ -43,7 +43,7 @@
 		</div>
 		<div>
 			<p class="text-mute mt-20 mb-0 font-size-16">Some features</p>
-			<!-- <h3 class="text-white mb-0 font-weight-500">$1,250 <small class="text-danger"><i class="fa fa-caret-down"></i> -0.5%</small></h3> -->
+			
 		</div>
 	</div>
 </div>
@@ -56,7 +56,7 @@
 		</div>
 		<div>
 			<p class="text-mute mt-20 mb-0 font-size-16">Some features</p>
-			<!-- <h3 class="text-white mb-0 font-weight-500">1,460 <small class="text-danger"><i class="fa fa-caret-up"></i> -1.5%</small></h3> -->
+			
 		</div>
 	</div>
 </div>
