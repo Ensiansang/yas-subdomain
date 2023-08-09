@@ -78,14 +78,6 @@
 	</div>
      	</div><!-- End col-md-5 -->
 
-     	<!-- <div class="col-md-2">     		
-      <div class="form-group">
-		<h5>Subjective Mark <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text" name="subjective_mark[]" class="form-control" > 
-	  </div>		 
-	</div>
-     	</div>End col-md-5 -->
 
 
      	<div class="col-md-2" style="padding-top: 25px;">
@@ -159,14 +151,7 @@
 	</div>
      	</div><!-- End col-md-5 -->
 
-     	<!-- <div class="col-md-2">     		
-      <div class="form-group">
-		<h5>Subjective Mark <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text" name="subjective_mark[]" class="form-control" > 
-	  </div>		 
-	</div>
-     	</div>End col-md-5 -->
+
 
      	<div class="col-md-2" style="padding-top: 25px;">
  <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> </span>
