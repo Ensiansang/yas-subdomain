@@ -33,15 +33,7 @@
 
 </div>				  
 
-					  <!-- <form class="search-form mx-auto my-30 w-p75">
-						<div class="input-group rounded60 overflow-h">
-						  <input type="text" name="search" class="form-control" placeholder="Search">
-						  <div class="input-group-prepend">
-							  <button type="submit" name="submit" class="btn btn-rounded btn-danger btn-sm"><i class="fa fa-search"></i></button>
-							</div>
-						</div> -->
-						<!-- /.input-group -->
-					  <!-- </form> -->
+					 
 				  </div>
 			  </div>				
 		  </div>
