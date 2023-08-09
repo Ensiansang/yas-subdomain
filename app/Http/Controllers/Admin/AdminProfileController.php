@@ -12,21 +12,13 @@ use Illuminate\Support\Facades\Hash;
 class AdminProfileController extends Controller
 {
     public function AdminProfileView(){
-    	// $id = Auth::user()->id;
-    	// $user = User::find($id);
-        // $user = User::with('role')->find(Auth::user()->id);
-        // $roleName = User::with('role')->find(Auth::user()->id)->role->name;
-        // $user = User::with('role')->find(Auth::user()->id);
-        // $roleName = $user->role->name;
+    	
         $id = Auth::user()->id;
         $user = User::with('role')->find($id);
         $roleName = $user->role->name;
     
         return view('admin.adminprofile.view_profile', compact('user', 'roleName'));
 
-
-
-    	//return view('admin.adminprofile.view_profile',compact('roleName','user'));
     }
 
 
@@ -81,7 +73,7 @@ class AdminProfileController extends Controller
     		$user = User::find(Auth::id());
     		$user->password = Hash::make($request->password);
     		$user->save();
-			// Auth::logout();
+		
 			$notification = array(
 				'message' => 'Admin Password Change Updated Successfully',
 				'alert-type' => 'success'
@@ -95,10 +87,7 @@ class AdminProfileController extends Controller
 	
 			return redirect()->back()->withErrors($errors);
 		}
-    	// 	return redirect()->route('addminlogin');
-    	// }else{
-    	// 	return redirect()->back();
-    	// }
+    	
 
 
  	} // End Method 
