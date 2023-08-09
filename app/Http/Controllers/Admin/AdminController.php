@@ -39,21 +39,7 @@ class AdminController extends Controller
             }
         }
 
-        // If authentication fails, redirect back with an error message
-        // return redirect()->back()->withInput()->withErrors(['login' => 'Invalid credentials']);
-
-        // If authentication fails, redirect back with specific error message
-    // $errors = [
-    //     'login' => 'Invalid credentials.',
-    // ];
-
-    // // Check if the email exists in the database
-    // $user = User::where('email', $request->input('email'))->first();
-    // if ($user && $user->role_id != 1) {
-    //     $errors['login'] = 'You are not authorized to access the admin area.';
-    // }
-
-    // return redirect()->back()->withInput()->withErrors($errors);
+        
     $errors = [];
 
 // Check if the email exists in the database
@@ -120,8 +106,7 @@ return redirect()->back()->withInput()->withErrors($errors);
 
         return redirect('admin/login')->with($notification);
 
-        // Auth::logout();
-        // return redirect('admin/login');
+       
         
     }// End Method
 }
