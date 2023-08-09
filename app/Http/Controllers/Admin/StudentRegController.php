@@ -16,7 +16,6 @@ class StudentRegController extends Controller
     	
     	$data['classes'] = StudentClass::all();
     	$data['class_id'] = StudentClass::orderBy('id','desc')->first()->id;
-    	// dd($data['class_id']);
     	$data['allData'] = AssignStudent::where('class_id',$data['class_id'])->get();
     	return view('admin.student_reg.student_view',$data);
 
@@ -33,9 +32,6 @@ class StudentRegController extends Controller
         $classId = $request->class_id;
 
     // Check if the student is already assigned to the class
-    // $existingAssignment = AssignStudent::where('student_id', $studentId)
-    //     ->where('class_id', $classId)
-    //     ->first();
     $existingAssignment = AssignStudent::where('student_id', $studentId)->first();
 
     if ($existingAssignment) {
@@ -79,21 +75,11 @@ class StudentRegController extends Controller
 
     public function StudentRegEdit($student_id){
     	$data['classes'] = StudentClass::all();
-
     	$data['editData'] = AssignStudent::with(['student'])->where('student_id',$student_id)->first();
-    	// dd($data['editData']->toArray());
     	return view('admin.student_reg.student_edit',$data);
 
     }
 
-    // public function SearchStudents(Request $request) {
-    //     $name = $request->input('name');
-    //     $students = User::where('role_id', 2)
-    //                     ->where('name', 'like', '%' . $name . '%')
-    //                     ->get(['id', 'name']);
-    
-    //     return response()->json($students);
-    // }
     public function search(Request $request)
     {
         $searchQuery = $request->input('name');
