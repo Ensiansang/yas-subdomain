@@ -106,57 +106,6 @@
 
 
 <script type="text/javascript">
-//   $(document).on('click','#search',function(){
-//     var class_id = $('#student_classes_id').val();
-//     var subject = $('#subject').val();
-//      $.ajax({
-//       url: "{{ route('student.marks.getstudent')}}",
-//       type: "GET",
-//       data: {'class_id':class_id},
-//       success: function (data) {
-//         $('#marks-entry').removeClass('d-none');
-//         var html = '';
-//         $.each( data, function(key, v){
-//           html +=
-//           '<tr>'+
-// 		  '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' + 
-//           '<td>'+v.student.name+'</td>'+
-//           '<td><input type="text" class="form-control form-control-sm" name="grade[]" ></td>'+
-//           '</tr>';
-//         });
-//         html = $('#marks-entry-tr').html(html);
-//       }
-//     });
-//   });
-// $(document).on('click', '#search', function() {
-//     var class_id = $('#student_classes_id').val();
-//     var assign_subject_id = $('#subject').val();
-//     $.ajax({
-//         url: "{{ route('student.marks.getstudent')}}",
-//         type: "GET",
-//         data: {
-//             'class_id': class_id,'subject':assign_subject_id
-//         },
-//         success: function(data) {
-//             $('#marks-entry').removeClass('d-none');
-//             var html = '';
-//             $.each(data, function(key, v) {
-// 				// console.log("v:", v);
-// 				// var gradeValue = v.grade !== null ? v.grade : ''; // Check if grade is not null
-// 				// console.log("gradeValue:", gradeValue);
-//                 html +=
-//                     '<tr>' +
-//                     '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
-//                     '<td>' + v.student.name + '</td>' +
-//                     '<td><input type="text" class="form-control form-control-sm grade-input" name="grade[]" value="' + gradeValue +  '"></td>' +
-//                     '<td><span class="grade-error text-danger"></span></td>' +
-//                     '</tr>';
-//             });
-//             $('#marks-entry-tr').html(html);
-//         }
-//     });
-// });
-
 $(document).on('click', '#search', function() {
     var class_id = $('#student_classes_id').val();
     
@@ -175,12 +124,7 @@ $(document).on('click', '#search', function() {
                     '<tr>' +
                     '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
                     '<td>' + v.student.name + '</td>' +
-                    // '<td><input type="file" name="pdf_file[]" value="' +  '"></td>' +
-                    // '<td><input type="file" name="image[]" value="' +  '"></td>' +
-                    // '<td><input type="file" name="pdf_file[]"></td>' +
-                    // '<td><input type="file" name="image_file[]"></td>' +
-                    // '</tr>';
-
+                
 					(v.uploadedData.length > 0 ? 
                         '<td>' + v.uploadedData[0].pdf_file_path + '</td>' +
                         '<td>' + v.uploadedData[0].image_file_path + '</td>'
@@ -188,16 +132,7 @@ $(document).on('click', '#search', function() {
                           '<td><input type="file" name="image_file[]"></td>'
                     ) +
                     '</tr>';
-					
-        //             @if ($errors->has('pdf_file'))
-        //     html += '<td colspan="2"><div class="alert alert-danger">{{ $errors->first('pdf_file') }}</div></td>';
-        // @endif
-        // @if ($errors->has('image_file'))
-        //     html += '<td colspan="2"><div class="alert alert-danger">{{ $errors->first('image_file') }}</div></td>';
-        // @endif
-		
-
-                   
+				                   
             });
             $('#marks-entry-tr').html(html);
         }
