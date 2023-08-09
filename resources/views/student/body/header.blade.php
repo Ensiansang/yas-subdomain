@@ -20,9 +20,7 @@
 		
       <div class="navbar-custom-menu r-side">
         <ul class="nav navbar-nav">
-		  <!-- full Screen -->
-	     
-		  <!-- Notifications -->
+		
 		 
 
 		  @php
