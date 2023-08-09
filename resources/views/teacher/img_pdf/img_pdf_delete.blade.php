@@ -83,8 +83,6 @@
  			
  		</table>
         
- <!-- <input type="submit" class="btn btn-rounded btn-primary" value="Submit"> -->
-
  	</div>
  	
  </div>
@@ -121,26 +119,12 @@ $(document).on('click', '#search', function() {
             $.each(data, function(key, v) {
                 html +=
                     '<tr>' +
-                    // '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
                     '<td>' + v.student.name + '</td>' +
                     
 					(v.uploadedData.length > 0 ? 
 					'<td><a href="#" class="delete_student btn btn-danger" name="user_id" data-value="' + v.student.id + '" id="delete">Delete</a></td>' :  '<td><a href="">-</a></td>'
                     ) +
-                    '</tr>';
-        //         html +=
-        // '<tr>' +
-        // '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
-        // '<td>' + v.student.name + '</td>' +
-        // (v.uploadedData.length > 0 ? 
-        //     '<td>' + v.uploadedData[0].pdf_file_path + '</td>' +
-        //     '<td>' + v.uploadedData[0].image_file_path + '</td>' +
-        //     '<td><button class="btn btn-danger delete-user" data-user-id="' + v.student.id + '">Delete</button></td>' 
-        //     : '<td colspan="2">No files uploaded</td><td><button class="btn btn-danger delete-user" data-user-id="' + v.student.id + '">Delete</button></td>'
-        // ) +
-        // '</tr>';
-
-				                   
+                    '</tr>';	                   
             });
             $('#marks-entry-tr').html(html);
         }
@@ -148,12 +132,7 @@ $(document).on('click', '#search', function() {
 });
 
 
-// $(document).on('click', '.delete_student', function(e) {
-//     e.preventDefault();
-    
-//     var clickedDeleteButton = $(this).data('value'); // Capture the clicked button
-// 	alert(clickedDeleteButton);
-// });
+
 
 </script>
 
