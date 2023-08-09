@@ -124,24 +124,10 @@ $(document).on('click', '#search', function() {
                     '<tr>' +
                     '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
                     '<td>' + v.student.name + '</td>' +
-					
-					// (v.uploadedData.length > 0 ? 
-                    //     '<td>' + v.uploadedData[0].pdf_file_path + '</td>' +
-                    //     '<td>' + v.uploadedData[0].image_file_path + '</td>'
-                    //     : '<td><input type="file" name="pdf_file[]"></td>' +
-                    //       '<td><input type="file" name="image_file[]"></td>'
-                    // ) +
-                    // '</tr>';
 					(v.uploadedData.length > 0 ?
                     // Display the existing file paths and provide options to replace the files
                      '<td><input type="file" name="pdf_file[]">'+ v.uploadedData[0].pdf_file_path + '</td>' +
-                        '<td><input type="file" name="image_file[]">'+ v.uploadedData[0].image_file_path + '</td>'					
-                        // '<td>' + v.uploadedData[0].pdf_file_path + '</td>' +
-                        // '<td>' + v.uploadedData[0].image_file_path + '</td>'
-              :
-                    // Provide file inputs if no files are uploaded for the student
-                    // '<td><input type="file" name="pdf_file[]"></td>' +
-                    //     '<td><input type="file" name="image_file[]"></td>'
+                        '<td><input type="file" name="image_file[]">'+ v.uploadedData[0].image_file_path + '</td>' :
 					'<td>-</td>' +
                         '<td>-</td>'
                 
