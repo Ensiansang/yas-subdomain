@@ -15,7 +15,6 @@ use App\Http\Controllers\Teacher\MarkController;
 use App\Http\Controllers\Teacher\RetrieveSubjectController;
 use App\Http\Controllers\Teacher\GradeReportController;
 use App\Http\Controllers\LoginController;
-// use App\Http\Controllers\ErrorController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 /*
 |--------------------------------------------------------------------------
@@ -33,41 +32,22 @@ Route::get('/', function () {
 });
 
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified'
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-// });
-// Route::middleware(['auth'])->group(function() {
-//  Route::get('/404', [ErrorController::class, 'handle404'])->name('error.404');
 
-// });
-
-// Route::get('/404', [ErrorController::class, 'handle404'])->name('error.404');
-
-// Route::get('/404', 'ErrorController@handle404')->name('error.404');
-// Other routes...
-
-// Route::fallback([ErrorController::class, 'handle404'])->name('error.404');
 
  Route::group(['middleware' => 'prevent-back-history'],function(){
 
-// Admin Login ->middleware(RedirectIfAuthenticated::class)
+
 Route::get('admin/login', [AdminController::class, 'AdminLogin']);
 Route::post('admin/login', [AdminController::class, 'Addminlogin'])->name('addminlogin');
 
-//Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
+
 
  Route::middleware(['auth', 'role:1'])->group(function() {
    Route::controller(AdminController::class)->group(function(){
     Route::get('admin/dashboard','AdminDashboard')->name('admin.dashboard');
     Route::get('admin/logout','AdminLogout')->name('admin.logout');
    });
-   // Route::prefix('user')->group(function() {
+
    Route::controller(ManageUserController::class)->group(function(){
     Route::get('admin/user/view', 'UserView')->name('user.view');
     Route::get('admin/user/add', 'UserAdd')->name('user.add');
@@ -77,7 +57,7 @@ Route::post('admin/login', [AdminController::class, 'Addminlogin'])->name('addmi
     Route::get('admin/user/delete/{id}', 'UserDelete')->name('user.delete');
     Route::get('admin/user/password/{id}', 'UserPassword')->name('user.password');
     Route::post('admin/user/password/update/{id}','UserPasswordUpdate')->name('user.password.update');
-   // });
+
    });
    Route::controller(AdminProfileController::class)->group(function(){
       Route::get('admin/profile/view', 'AdminProfileView')->name('profile.view');
@@ -170,7 +150,7 @@ Route::middleware(['auth', 'role:2' , 'verified'])->group(function() {
       Route::post('teacher-img/pdf-update','Img_Pdf_Update')->name('img.pdf.update');
       Route::get('teacher-img/pdf-delete', 'Img_Pdf_Delete')->name('img.pdf.delete');
       Route::delete('teacher-img/pdf-real-delete/{user_id}', 'Img_Pdf_Real_Delete')->name('img.pdf.real.delete');
-      // Route::get('teacher/get/id','IdPass')->name('teacher.get.id');
+    
 });
 });
  });
