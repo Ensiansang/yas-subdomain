@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
-// use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 
 class AdminProfileController extends Controller
