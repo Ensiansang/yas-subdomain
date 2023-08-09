@@ -16,8 +16,7 @@
                 }
             });
 
-            // Now you can put your specific AJAX calls here
-            // ...
+    
             
         });
     </script>
