@@ -16,12 +16,7 @@ class RetrieveSubjectController extends Controller
     public function GetSubject(Request $request){
     	$class_id = $request->class_id;
     	 $allData = AssignSubject::with(['school_subject'])->where('class_id',$class_id)->get();
-		 
-		// $allData = AssignSubject::with(['school_subject', 'grades' => function ($query) use ($class_id) {
-		// 	$query->where('student_classes_id', $class_id);
-		// }])->get();
-	
-		return response()->json($allData);
+		 return response()->json($allData);
 		
     }
     public function GetStudent(Request $request){
@@ -37,38 +32,7 @@ class RetrieveSubjectController extends Controller
 		];
 		
 		return response()->json($responseData);
-		//  return response()->json($allData);
-
-// 		$class_id = $request->class_id;
-// $assign_subject_id = $request->subject;
-
-// $allData = AssignStudent::leftJoin('grades', function ($join) use ($class_id, $assign_subject_id) {
-//         $join->on('assign_students.student_id', '=', 'grades.student_classes_id')
-//             ->where('grades.student_classes_id', '=', $class_id)
-//             ->where('grades.subject', '=', $assign_subject_id);
-//     })
-//     ->with(['student'])
-//     ->where('assign_students.class_id', $class_id)
-//     ->get();
-
-// return response()->json($allData);
-
-// $class_id = $request->class_id;
-// $assign_subject_id = $request->subject;
-
-// $allData = Grade::leftJoin('assign_students', function ($join) use ($class_id, $assign_subject_id) {
-//         $join->on('assign_students.student_id', '=', 'grades.student_classes_id')
-//             ->where('grades.student_classes_id', '=', $class_id)
-//             ->where('grades.subject', '=', $assign_subject_id);
-//     })
-//     ->with(['student'])
-//     ->where('assign_students.class_id', $class_id)
-//     ->get();
-
-// return response()->json($allData);
-
-
-
+	
     }
 
 }
