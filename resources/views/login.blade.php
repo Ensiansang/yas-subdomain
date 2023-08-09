@@ -50,7 +50,7 @@ if (Auth::check()) {
                 <div class="input-group-prepend">
                     <span class="input-group-text bg-transparent text-white"><i class="ti-user"></i></span>
                 </div>
-       <!-- <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Email"> -->
+      
        <input type="email" id="email" name="email" value="{{ session('email') ?: old('email') }}" required autocomplete="email" autofocus class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Email">
 
             </div>
@@ -65,10 +65,7 @@ if (Auth::check()) {
         </div>
           <div class="row">
             <div class="col-6">
-              <!-- <div class="checkbox text-white">
-                <input type="checkbox" id="basic_checkbox_1" >
-                <label for="basic_checkbox_1">Remember Me</label>
-              </div> -->
+             
             </div>
             <!-- /.col -->
             <div class="col-6">
@@ -92,19 +89,7 @@ if (Auth::check()) {
     </form>
     @endif                                                     
 
-    <!-- <div class="text-center text-white">
-      <p class="mt-20">- Sign With -</p>
-      <p class="gap-items-2 mb-20">
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-facebook"></i></a>
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-twitter"></i></a>
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-google-plus"></i></a>
-          <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-instagram"></i></a>
-        </p>    
-    </div>
-    
-    <div class="text-center">
-        <p class="mt-15 mb-0 text-white">Don't have an account? <a href="{{ route('register') }}" class="text-info ml-5">Sign Up</a></p>
-                            </div> -->
+    <
                         </div>
                     </div>
                 </div>
