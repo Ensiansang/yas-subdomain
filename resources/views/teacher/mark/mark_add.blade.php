@@ -116,57 +116,6 @@
 
 
 <script type="text/javascript">
-//   $(document).on('click','#search',function(){
-//     var class_id = $('#student_classes_id').val();
-//     var subject = $('#subject').val();
-//      $.ajax({
-//       url: "{{ route('student.marks.getstudent')}}",
-//       type: "GET",
-//       data: {'class_id':class_id},
-//       success: function (data) {
-//         $('#marks-entry').removeClass('d-none');
-//         var html = '';
-//         $.each( data, function(key, v){
-//           html +=
-//           '<tr>'+
-// 		  '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' + 
-//           '<td>'+v.student.name+'</td>'+
-//           '<td><input type="text" class="form-control form-control-sm" name="grade[]" ></td>'+
-//           '</tr>';
-//         });
-//         html = $('#marks-entry-tr').html(html);
-//       }
-//     });
-//   });
-// $(document).on('click', '#search', function() {
-//     var class_id = $('#student_classes_id').val();
-//     var assign_subject_id = $('#subject').val();
-//     $.ajax({
-//         url: "{{ route('student.marks.getstudent')}}",
-//         type: "GET",
-//         data: {
-//             'class_id': class_id,'subject':assign_subject_id
-//         },
-//         success: function(data) {
-//             $('#marks-entry').removeClass('d-none');
-//             var html = '';
-//             $.each(data, function(key, v) {
-// 				// console.log("v:", v);
-// 				// var gradeValue = v.grade !== null ? v.grade : ''; // Check if grade is not null
-// 				// console.log("gradeValue:", gradeValue);
-//                 html +=
-//                     '<tr>' +
-//                     '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
-//                     '<td>' + v.student.name + '</td>' +
-//                     '<td><input type="text" class="form-control form-control-sm grade-input" name="grade[]" value="' + gradeValue +  '"></td>' +
-//                     '<td><span class="grade-error text-danger"></span></td>' +
-//                     '</tr>';
-//             });
-//             $('#marks-entry-tr').html(html);
-//         }
-//     });
-// });
-
 $(document).on('click', '#search', function() {
     var class_id = $('#student_classes_id').val();
     var assign_subject_id = $('#subject').val();
@@ -188,13 +137,6 @@ $(document).on('click', '#search', function() {
                 if (studentGrade) {
                     gradeValue = studentGrade.grade;
                 }
-                // html +=
-                    // '<tr>' +
-                    // '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
-                    // '<td>' + v.student.name + '</td>' +
-                //     '<td><input type="text" class="form-control form-control-sm grade-input" name="grade[]" value="' + gradeValue +  '"></td>' +
-                //     '<td><span class="grade-error text-danger"></span></td>' +
-                //     '</tr>';
                 // Show the grade value if it exists, otherwise show an input field
         if (gradeValue) {
             html += 
@@ -203,13 +145,6 @@ $(document).on('click', '#search', function() {
             '<td>' + gradeValue + '</td>';
             '</tr>';
         } else {
-          //   html += 
-          //   '<tr>' +
-          //  '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
-          //   '<td>' + v.student.name + '</td>' +
-          //   '<td><input type="text" class="form-control form-control-sm grade-input" name="grade[]" value=""></td>'+
-          //   '<td><span class="grade-error text-danger"></span></td>' +
-          //   '</tr>';
           html += 
             '<tr>' +
             '<input type="hidden" name="user_id[]" value="' + v.student.id + '">' +
@@ -226,49 +161,6 @@ $(document).on('click', '#search', function() {
 });
 
 
-
-// $(document).on('input', '.grade-input', function() {
-//     var grade = $(this).val();
-//     var maxDigits = 3;
-//     if (grade.length > maxDigits) {
-//         $(this).val(grade.slice(0, maxDigits));
-//         $(this).closest('tr').find('.grade-error').text('Grade should not exceed 3 digits');
-//     } else {
-//         $(this).closest('tr').find('.grade-error').empty();
-//     }
-// });
-// $(document).on('input', '.grade-input', function() {
-//     var grade = $(this).val();
-
-//     // Check if the input is a valid number (either an integer or a decimal)
-//     if (isNaN(grade) || parseFloat(grade) < 0 || parseFloat(grade) > 100) {
-//         $(this).val('');
-//         $(this).closest('tr').find('.grade-error').text('Invalid grade. Please enter a number between 0 and 100.');
-//     } else {
-//         var maxDigits = 5; // Allow up to 5 digits in total (including the decimal point)
-//         var maxDecimalDigits = 1; // Allow up to 1 decimal digit
-
-//         // Split the input by the decimal point (if any)
-//         var parts = grade.split('.');
-//         var wholePart = parts[0];
-//         var decimalPart = parts[1] || '';
-
-//         // Ensure the whole part has at most maxDigits - maxDecimalDigits digits
-//         if (wholePart.length > maxDigits - maxDecimalDigits) {
-//             wholePart = wholePart.slice(0, maxDigits - maxDecimalDigits);
-//         }
-
-//         // Combine the whole part and decimal part back together
-//         var formattedGrade = wholePart;
-//         if (decimalPart !== '') {
-//             formattedGrade += '.' + decimalPart.slice(0, maxDecimalDigits);
-//         }
-
-//         // Update the input field value with the formatted grade
-//         $(this).val(formattedGrade);
-//         $(this).closest('tr').find('.grade-error').empty();
-//     }
-// });
 $(document).on('input', '.grade-input', function() {
     var grade = $(this).val();
 
