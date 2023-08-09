@@ -32,16 +32,7 @@
  	
  		<div class="row"> <!-- 1st Row -->
  			
- 			<!-- <div class="col-md-4">
-
- 		 <div class="form-group">
-		<h5>Student Name <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text" name="name" class="form-control" required="" value="{{ $editData['student']['name'] }}"> 
-	  </div>		 
-	  </div>
-
- 			</div> End Col md 4 -->
+ 	
  			
  		<div class="col-md-4">
 
