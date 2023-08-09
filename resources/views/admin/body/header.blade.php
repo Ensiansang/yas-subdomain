@@ -14,28 +14,13 @@
 					<i class="nav-link-icon mdi mdi-crop-free"></i>
 			    </a>
 			</li>			
-			<!-- <li class="btn-group nav-item d-none d-xl-inline-block">
-				<a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-					<i class="ti-check-box"></i>
-			    </a>
-			</li> -->
-			<!-- <li class="btn-group nav-item d-none d-xl-inline-block">
-				<a href="calendar.html" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-					<i class="ti-calendar"></i>
-			    </a>
-			</li> -->
+			
 		  </ul>
 	  </div>
 		
       <div class="navbar-custom-menu r-side">
         <ul class="nav navbar-nav">
-		  <!-- full Screen -->
-	      <!-- <li class="search-bar">		  
-			  <div class="lookup lookup-circle lookup-right">
-			     <input type="text" name="s">
-			  </div>
-		  </li>			 -->
-		  <!-- Notifications -->
+		 
 		  <li class="dropdown notifications-menu">
 			<a href="#" class="waves-effect waves-light rounded dropdown-toggle" data-toggle="dropdown" title="Notifications">
 			  <i class="ti-bell"></i>
@@ -56,7 +41,7 @@
 			  </li>
 
 			  <li>
-				<!-- inner menu: contains the actual data -->
+				
 				<ul class="menu sm-scrol">
 				  <li>
 					<a href="#">
@@ -82,19 +67,12 @@
 			<ul class="dropdown-menu animated flipInX">
 			  <li class="user-body">
 				 <a class="dropdown-item" href="{{ route('profile.view') }}"><i class="ti-user text-muted mr-2"></i> Profile</a>
-				 <!-- <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a> -->
-				 <!-- <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a> -->
 				 <div class="dropdown-divider"></div>
 				 <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="ti-lock text-muted mr-2"></i> Logout</a>
 			  </li>
 			</ul>
           </li>	
-		  <!-- <li>
-              <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
-			  	<i class="ti-settings"></i>
-			  </a>
-          </li> -->
-			
+		 			
         </ul>
       </div>
     </nav>
