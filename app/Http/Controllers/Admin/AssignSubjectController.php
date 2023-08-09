@@ -11,7 +11,6 @@ use App\Models\AssignSubject;
 class AssignSubjectController extends Controller
 {
     public function AssignSubjectView(){
-// $data['allData'] = AssignSubject::all();
 $data['allData'] = AssignSubject::select('class_id')->groupBy('class_id')->get();
 return view('admin.assign_subject.view_assign_subject',$data);
     }
@@ -33,7 +32,6 @@ return view('admin.assign_subject.view_assign_subject',$data);
 	    			$assign_subject->subject_id = $request->subject_id[$i];
 	    			$assign_subject->full_mark = $request->full_mark[$i];
 	    			$assign_subject->pass_mark = $request->pass_mark[$i];
-	    			// $assign_subject->subjective_mark = $request->subjective_mark[$i];
 	    			$assign_subject->save();
 
 	    		} // End For Loop
@@ -51,7 +49,6 @@ return view('admin.assign_subject.view_assign_subject',$data);
 
 	 public function AssignSubjectEdit($class_id){
 	    	$data['editData'] = AssignSubject::where('class_id',$class_id)->orderBy('subject_id','asc')->get();
-	    	// dd($data['editData']->toArray());
 	    $data['subjects'] = SchoolSubject::all();
     	$data['classes'] = StudentClass::all();
     	return view('admin.assign_subject.edit_assign_subject',$data);
@@ -79,7 +76,6 @@ public function AssignSubjectUpdate(Request $request,$class_id){
 	    			$assign_subject->subject_id = $request->subject_id[$i];
 	    			$assign_subject->full_mark = $request->full_mark[$i];
 	    			$assign_subject->pass_mark = $request->pass_mark[$i];
-	    			// $assign_subject->subjective_mark = $request->subjective_mark[$i];
 	    			$assign_subject->save();
 
     		} // End For Loop	 
