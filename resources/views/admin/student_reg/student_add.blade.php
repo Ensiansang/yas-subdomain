@@ -8,10 +8,10 @@
     $(document).ready(function() {
       $('.select2-autocomplete').select2({
         placeholder: 'Search for a student',
-        minimumInputLength: 2, // Adjust as needed
-        tags: true, // Allow typing
+        minimumInputLength: 2,
+        tags: true, 
         ajax: {
-          url: '/search-students', // Replace with the actual route URL
+          url: '/search-students', 
           dataType: 'json',
           delay: 250,
           processResults: function(data) {
@@ -173,7 +173,7 @@
     var searchQuery = $(this).val();
 
     $.ajax({
-      url: '/search-students', // Replace with the actual route URL
+      url: '/search-students', 
       method: 'GET',
       data: { name: searchQuery },
       success: function(response) {
